@@ -50,6 +50,14 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<distributionManagement>
+                <repository>
+                    <id>nexusRepo</id>  <!-- This must match your settings.xml id -->
+                    <url>http://192.168.70.80:8081/repository/sample-releases/</url>
+                </repository>
+        </distributionManagement>
+	
 	<dependencies>
 
 		<dependency>
