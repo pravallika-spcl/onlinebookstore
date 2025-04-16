@@ -12,7 +12,7 @@ driver = webdriver.Chrome(options=options)
 
 # Admin credentials
 admin_username = "admin"  # Replace with actual admin username
-admin_password = "adminpassword"  # Replace with actual admin password
+admin_password = "admin"  # Replace with actual admin password
 
 # Basic page title check
 def basic_page_title_check():
