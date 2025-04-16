@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 options = Options()
@@ -12,16 +14,23 @@ driver = webdriver.Chrome(options=options)
 
 # Update with actual admin credentials
 admin_username = "admin"  # Replace with actual admin username
-admin_password = "adminpassword"  # Replace with actual admin password
+admin_password = "admin"  # Replace with actual admin password
 
 def login_as_admin():
     try:
         driver.get("http://localhost:8080/onlinebookstore/SellerLogin.html")  # Update with your login URL
         time.sleep(2)  # Wait for the page to load
+        
+        # Explicit wait to ensure the elements are present before interacting
+        wait = WebDriverWait(driver, 10)
+
+        # Wait for username field to be available
+        username_field = wait.until(EC.presence_of_element_located((By.NAME, "username")))  # Update with actual locator if different
+        password_field = wait.until(EC.presence_of_element_located((By.NAME, "password")))  # Update if different
 
         # Enter admin credentials
-        driver.find_element(By.ID, "username").send_keys(admin_username)  # Replace 'username' with actual ID if different
-        driver.find_element(By.ID, "password").send_keys(admin_password)  # Replace 'password' with actual ID if different
+        username_field.send_keys(admin_username)
+        password_field.send_keys(admin_password)
         
         # Click the login button using class name
         driver.find_element(By.CLASS_NAME, "AdminLogin").click()  # Using class 'AdminLogin' to find the login button
