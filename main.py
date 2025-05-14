@@ -1,17 +1,19 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.options import Options
 import time
 
 # Setup Chrome options for headless mode
-options = Options()
-options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
+# options = Options()
+# options.add_argument("--headless")
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
 
 service = Service(executable_path="/var/lib/jenkins/workspace/selenium_obs/chromedriver")
-driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Chrome(service=service)
+
+# driver = webdriver.Chrome(service=service, options=options)
 
 driver.get("http://10.201.0.3:8080/onlinebookstore/")
 
