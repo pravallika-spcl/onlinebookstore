@@ -14,8 +14,7 @@ import tempfile
 
 # Setup Chrome WebDriver
 service = Service(executable_path="./chromedriver")
-driver = webdriver.Chrome(service=service)
-# driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Chrome(service=service, options=options)
  
 # === Book Details ===
 book_quantity = 30
