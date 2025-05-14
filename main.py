@@ -5,12 +5,12 @@ import time
 import tempfile
  
 # === Chrome Headless Setup ===
-# options = webdriver.ChromeOptions()
+options = webdriver.ChromeOptions()
 # options.add_argument('--headless')
-# options.add_argument('--no-sandbox')
-# options.add_argument('--disable-dev-shm-usage')
-# options.add_argument('--disable-gpu')
-# options.add_argument(f'--user-data-dir={tempfile.mkdtemp()}')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--disable-gpu')
+options.add_argument(f'--user-data-dir={tempfile.mkdtemp()}')
 
 # Setup Chrome WebDriver
 service = Service(executable_path="./chromedriver")
