@@ -10,7 +10,7 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
-service = Service(executable_path="/home/spravallika/Desktop/Selenium/chromedriver")
+service = Service(executable_path="/var/lib/jenkins/workspace/selenium_obs")
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.get("http://10.201.0.3:8080/onlinebookstore/")
