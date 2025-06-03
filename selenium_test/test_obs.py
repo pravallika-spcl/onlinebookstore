@@ -13,7 +13,7 @@ options.add_argument('--disable-gpu')
 options.add_argument(f'--user-data-dir={tempfile.mkdtemp()}')
 
 # Setup Chrome WebDriver
-service = Service(executable_path="./selenium_test/chromedriver")
+service = Service(executable_path="./chromedriver")
 driver = webdriver.Chrome(service=service, options=options)
  
 # === Book Details ===
